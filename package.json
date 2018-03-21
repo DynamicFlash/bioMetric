@@ -1,0 +1,18 @@
+{
+  "name": "biometricattendance",
+  "version": "0.0.1",
+  "description": "this is the server backend only(production server)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "bioMetric"
+  },
+  "author": "Aldrin Fernandes",
+  "license": "ISC",
+  "dependencies": {
+    "firebase-admin": "^5.11.0"
+  }
+}
