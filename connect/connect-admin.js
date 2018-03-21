@@ -5,7 +5,8 @@ var serviceAccount = require("./../Keys/serviceAccountKey.json");
 
 var defaultApp = admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://attendance-196708.firebaseio.com"
+  databaseURL: "https://attendance-196708.firebaseio.com",
+  storageBucket: "attendance-196708.appspot.com" 
 })
 
 console.log(defaultApp.name);

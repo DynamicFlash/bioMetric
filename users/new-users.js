@@ -1,4 +1,5 @@
 const {admin} = require('./../connect/connect-admin');
+const dbadd =require('./../db/add-db');
 
 var user ={
   email : 'aldrin.a.fernandes@gmail.com',
@@ -9,7 +10,6 @@ var user ={
 
 var newUser = (user)=>
 {
-
   admin.auth().createUser({
   email: user.email,
   emailVerified: true,
@@ -18,14 +18,15 @@ var newUser = (user)=>
   disabled: false
 })
   .then(function(userRecord) {
-    // See the UserRecord reference doc for the contents of userRecord.
-    console.log("Successfully created new user:", userRecord.uid);
+    console.log("Successfully created new user:", userRecord);
+    dbadd(userRecord.toJSON());
+    
   })
   .catch(function(error) {
-    console.log(error.errorInfo.message);
+    console.log(error);
   });
 
 }
-
+newUser(user);
 
 module.exports = newUser;
